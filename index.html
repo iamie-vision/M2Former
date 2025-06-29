@@ -137,7 +137,16 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            With increasing human space activities, the detection and tracking of resident space objects (RSOs) has become vital for space situational awareness (SSA). Traditional optical sensing modalities face significant challenges due to extreme illumination conditions, rapid motion, and varying object scales. Event cameras, characterized by asynchronous, sparse event streams, wide dynamic range, and high temporal resolution, present promising alternatives but remain underexplored for space-based detection tasks. In this paper, we present the first systematic investigation of event-based detectors for spaceborne object detection tasks. To overcome the scarcity of event-based datasets, we propose a novel synthesis method that generates physically consistent event streams from static images through controlled affine transformations and advanced event simulators, resulting in the publicly available E-SPARK dataset. Furthermore, we introduce M²Former, a lightweight, multi-scale backbone integrated into the RT-DETR framework, enhancing real-time detection capabilities for sparse event data. To improve the detection accuracy of small RSOs, we propose an area-aware localization loss (AAL), which adaptively emphasizes localization errors based on object size, and incorporate tailored data augmentation strategies to increase data diversity and supervision density. Extensive experiments conducted on the synthetic E-SPARK dataset and validated via zero-shot testing on real-world data from a dedicated testbed confirm the method's superior accuracy, efficiency, and robustness. Our method significantly improves detection accuracy (mAP@50) from 82.6% to 90.3% compared to the RT-DETR-R18 baseline and outperforms state-of-the-art YOLO models. Moreover, it reduces the parameter count and computational complexity by over 50% relative to RT-DETR-R18, achieving a better trade-off between accuracy and efficiency. These results demonstrate the strong potential of event-based detection methods for robust and efficient space situational awareness applications.
+            With increasing human space activities, the detection and tracking of resident space objects (RSOs) has become vital for space situational awareness (SSA). Traditional optical sensing modalities face significant challenges due to 
+            extreme illumination conditions, rapid motion, and varying object scales. Event cameras, characterized by asynchronous, sparse event streams, wide dynamic range, and high temporal resolution, present promising alternatives but remain 
+            underexplored for space-based detection tasks. In this paper, we present the first systematic investigation of event-based detectors for spaceborne object detection tasks. To overcome the scarcity of event-based datasets, 
+            we propose a novel synthesis method that generates physically consistent event streams from static images through controlled affine transformations and advanced event simulators, resulting in the publicly available E-SPARK dataset. 
+            Furthermore, we introduce M²Former, a lightweight, multi-scale backbone integrated into the RT-DETR framework, enhancing real-time detection capabilities for sparse event data. To improve the detection accuracy of small RSOs, 
+            we propose an area-aware localization loss (AAL), which adaptively emphasizes localization errors based on object size, and incorporate tailored data augmentation strategies to increase data diversity and supervision density. 
+            Extensive experiments conducted on the synthetic E-SPARK dataset and validated via zero-shot testing on real-world data from a dedicated testbed confirm the method's superior accuracy, efficiency, and robustness. 
+            Our method significantly improves detection accuracy (mAP@50) from 82.6% to 90.3% compared to the RT-DETR-R18 baseline and outperforms state-of-the-art YOLO models. Moreover, it reduces the parameter count and 
+            computational complexity by over 50% relative to RT-DETR-R18, achieving a better trade-off between accuracy and efficiency. These results demonstrate the strong potential of event-based detection methods for 
+            robust and efficient space situational awareness applications.
           </p>
         </div>
       </div>
@@ -214,13 +223,13 @@
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3 has-text-centered">Ground-based Testbed</h2>
+      <h2 class="title is-3 has-text-centered">Generalization to Real data</h2>
 
       <!-- Text description -->
       <div style="max-width: 960px; margin: 0 auto; line-height: 1.8; font-size: 1rem; text-align: justify;">
       <p>
         Zero-shot validation is conducted on real-world data collected from a ground-based testbed, using models trained exclusively on synthetic data without any fine-tuning. We collected a total of 300 samples using the testbed, covering three illumination conditions: normal exposure, overexposure, and underexposure, with 100 samples per condition. For each sample, RGB images and event data were synchronously recorded by the DAVIS346 camera.
-        We adopt YOLOv8s as the representative RGB-based detector due to its high detection accuracy and moderate model complexity. Comparision results underscore the robustness of event data under extreme lighting conditions and demenstrate the strong sim-to-real generalization capability of the M²Former model, making it well-suited for robust object detection in real-world space environments.
+        We adopt YOLOv8s as the representative RGB-based detector due to its high detection accuracy and moderate model complexity. Comparision results underscore the robustness of event data under extreme lighting conditions and demenstrate the strong sim-to-real generalization capability of the M²Former model, making it reliable object detection in real-world space scenarios.
       </p>
       </div>
       
