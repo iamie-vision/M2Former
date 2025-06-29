@@ -202,10 +202,11 @@
       <!-- Text description -->
       <div style="max-width: 960px; margin: 0 auto; line-height: 1.8; font-size: 1rem; text-align: justify;">
       <p>
-        Zero-shot validation is conducted on real-world data collected from a ground-based testbed, using models trained exclusively on synthetic data without any fine-tuning. We collected a total of 300 samples using the testbed, covering three illumination conditions: normal exposure, overexposure, and underexposure, with 100 samples per condition. For each sample, RGB images and event data were synchronously recorded by the DAVIS346 camera.<br>
+        Zero-shot validation is conducted on real-world data collected from a ground-based testbed, using models trained exclusively on synthetic data without any fine-tuning. We collected a total of 300 samples using the testbed, covering three illumination conditions: normal exposure, overexposure, and underexposure, with 100 samples per condition. For each sample, RGB images and event data were synchronously recorded by the DAVIS346 camera.
         We adopt YOLOv8s as the representative RGB-based detector due to its high detection accuracy and moderate model complexity. Comparision results underscore the robustness of event data under extreme lighting conditions and demenstrate the strong sim-to-real generalization capability of the M²Former model, making it well-suited for robust object detection in real-world space environments.
       </p>
       </div>
+      
       <!-- Your image -->
       <figure class="has-text-centered" style="margin-top: 2rem;">
         <img src="static/images/testbed.png" style="width: 70%; height: auto;"/>
@@ -213,6 +214,32 @@
       <h2 class="subtitle has-text-centered" style="font-size: 1rem; margin-bottom: 2rem;">
         Simulation testbed for real data collection and its hardware components.
       </h2>
+
+      <!-- Video carousel -->
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <video poster="" id="video1" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/carousel1.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <video poster="" id="video2" autoplay controls muted loop height="100%">
+              <!-- Your video file here -->
+              <source src="static/videos/carousel2.mp4"
+              type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="video3" autoplay controls muted loop height="100%">\
+            <!-- Your video file here -->
+            <source src="static/videos/carousel3.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+      </div>
+
       <!-- Your image -->
       <figure class="has-text-centered">
         <img src="static/images/real_results.png" style="width: 70%; height: auto;"/>
@@ -265,7 +292,7 @@
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3 has-text-centered">Quantitative Results</h2>
-      <iframe  src="static/pdfs/Tables.pdf" width="100%" height="800"></iframe>
+      <iframe  src="static/pdfs/Tables.pdf" width="100%" height="700"></iframe>
       </div>
     </div>
   </section>
