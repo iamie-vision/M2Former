@@ -215,7 +215,7 @@
       <div style="max-width: 960px; margin: 0 auto; line-height: 1.8; font-size: 1rem; text-align: justify; margin-bottom: 2rem;">
       <p>
         We adopt standard evaluation metrics from object detection benchmarks. <strong>mAP@50</strong> represents mean Average Precision at IoU threshold 0.5, which measures overall detection accuracy. <strong>mAP@50:95</strong> averages AP over multiple IoU thresholds (0.5 to 0.95 with a step of 0.05), offering a more stringent indicator of localization precision. 
-        <strong>mAPs</strong> denotes average precision for small objects, highlighting performance in challenging cases. In our <strong>zero-shot generalization</strong> evaluation, class labels are not considered, so <strong>AP</strong> is computed to reflect category-agnostic detection performance.
+        <strong>mAPs</strong> denotes average precision for small objects, highlighting performance in challenging cases. In our <strong>zero-shot generalization</strong> evaluation, class labels are not considered, so <strong>AP@50</strong> and <strong>AP@50:95</strong> are computed to reflect category-agnostic detection performance.
       </p>
       <ul style="list-style-type: disc; padding-left: 1.5rem;">
       <li><strong>Table I:</strong> We compare different event representations (Histogram, Time Surface, Event Volume) across detection models. Event Histogram is ultimately selected due to its strong detection performance and fastest preprocessing speed, offering a favorable trade-off for large-scale training and deployment.</li>
