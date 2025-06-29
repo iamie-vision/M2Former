@@ -14,7 +14,7 @@ $(document).ready(function() {
     }
 
 		// Initialize all div with carousel class
-    var carousels = bulmaCarousel.attach('.carousel', options);
+    var carousels = bulmaCarousel.attach('.carousel', {autoplaySpeed: 6000});
 	
     bulmaSlider.attach();
 
