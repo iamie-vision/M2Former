@@ -115,7 +115,7 @@
       <figure class="has-text-centered">
         <img src="static/images/model_comparison.png" style="width: 95%; height: auto;"/>
       </figure>
-      <h2 class="subtitle has-text-centered">
+      <h2 class="subtitle has-text-centered" style="font-size: 1rem;">
         Performance comparison of YOLO, RT-DETR, and M²Former on the E-SPARK dataset, where M²Former* denotes the variant achieving the highest mAP@50, trained with area-aware localization loss and data augmentation strategy.
       </h2>
     </div>
@@ -146,7 +146,7 @@
   <div class="hero-body">
     <div class="container">
       <!-- Text description -->
-      <h2 class="title is-3">Qualitative Comparison</h2>
+      <h2 class="title is-3 has-text-centered">Qualitative Comparison</h2>
       <div style="max-width: 960px; margin: 0 auto; line-height: 1.8; font-size: 1rem; text-align: justify;">
       <p>
         RepViT demonstrates the success of the MetaFormer paradigm within convolutional networks. Inspired by this, we redesign the RT-DETR backbone based on its minimal RT-DETR-R18 configuration into a MetaFormer-style structure that is optimized for spaceborne scenarios with constrained computation and memory. Our M²Former enables efficient convolutional operations and multi-scale feature extraction through the integration of Res2Net, spatial attention, channel attention, and SPD-Conv modules. Detection results on the E-SPARK dataset are shown below.
