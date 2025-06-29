@@ -147,7 +147,8 @@
     <div class="container">
       <!-- Text description -->
       <h2 class="title is-3">Qualitative Comparison</h2>
-      <p class="has-text-centered" style="margin-bottom: 1.5rem;">
+      <div style="max-width: 960px; margin: 0 auto; line-height: 1.8; font-size: 1rem; text-align: justify;">
+      <p>
         RepViT demonstrates the success of the MetaFormer paradigm within convolutional networks. Inspired by this, we redesign the RT-DETR backbone based on its minimal RT-DETR-R18 configuration into a MetaFormer-style structure that is optimized for spaceborne scenarios with constrained computation and memory. Our M²Former enables efficient convolutional operations and multi-scale feature extraction through the integration of Res2Net, spatial attention, channel attention, and SPD-Conv modules. Detection results on the E-SPARK dataset are shown below.
       </p>
 
@@ -155,28 +156,28 @@
        <div class="item">
         <!-- Your image here -->
         <img src="static/images/model_architecture.png" style="width: 80%; height: auto; display: block; margin: 0 auto;"/>
-        <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+        <h2 class="subtitle has-text-centered" style="margin-top: 1rem; font-size: 1rem;">
           Overall architecture of M²Former.
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
         <img src="static/images/event_generation.png" style="width: 65%; height: auto; display: block; margin: 0 auto;"/>
-        <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+        <h2 class="subtitle has-text-centered" style="margin-top: 1rem; font-size: 1rem;">
           Comparison of event generation methods: RGB inputs (top), Cao’s method (middle), and the proposed method (bottom). 
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
         <img src="static/images/sim_results.png" style="width: 85%; height: auto; display: block; margin: 0 auto;"/>
-        <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+        <h2 class="subtitle has-text-centered" style="margin-top: 1rem; font-size: 1rem;">
          Detection results of YOLO11m (top), RT-DETR-R18 (middle), and the proposed M²Former (bottom) on the E-SPARK dataset.
        </h2>
      </div>
      <div class="item">
       <!-- Your image here -->
       <img src="static/images/ablation_heatmap.png" style="width: 92%; height: auto; display: block; margin: 0 auto;"/>
-      <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+      <h2 class="subtitle has-text-centered" style="margin-top: 1rem; font-size: 1rem;">
         Heatmap visualizations of M²Former and its ablated variants on event data. From left to right: RGB reference images, and feature maps from the M²Former, and its ablated versions without Res2Net, spatial attention, channel attention, and SPD-Conv, respectively.
       </h2>
     </div>
