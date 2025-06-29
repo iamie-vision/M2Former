@@ -142,7 +142,7 @@
 <!-- End paper abstract -->
 
 
-<!-- Image carousel 1 -->
+<!-- Image carousel -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
@@ -190,7 +190,40 @@
     </div>
   </div>
 </section>
-<!-- End image carousel 1 -->
+<!-- End image carousel -->
+
+
+<!-- Testbed image -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">Ground-based Testbed</h2>
+
+      <!-- Text description -->
+      <div style="max-width: 960px; margin: 0 auto; line-height: 1.8; font-size: 1rem; text-align: justify;">
+      <p>
+        Zero-shot validation is conducted on real-world data collected from a ground-based testbed, using models trained exclusively on synthetic data without any fine-tuning. We collected a total of 300 samples using the testbed, covering three illumination conditions: normal exposure, overexposure, and underexposure, with 100 samples per condition. For each sample, RGB images and event data were synchronously recorded by the DAVIS346 camera.<br>
+        We adopt YOLOv8s as the representative RGB-based detector due to its high detection accuracy and moderate model complexity. Comparision results underscore the robustness of event data under extreme lighting conditions and demenstrate the strong sim-to-real generalization capability of the M²Former model, making it well-suited for robust object detection in real-world space environments.
+      </p>
+      </div>
+      <!-- Your image -->
+      <figure class="has-text-centered">
+        <img src="static/images/testbed.png" style="width: 100%; height: auto;"/>
+      </figure>
+      <h2 class="subtitle has-text-centered" style="font-size: 1rem;">
+        Simulation testbed for real data collection and its hardware components.
+      </h2>
+      <!-- Your image -->
+      <figure class="has-text-centered">
+        <img src="static/images/real_results.png" style="width: 100%; height: auto;"/>
+      </figure>
+      <h2 class="subtitle has-text-centered" style="font-size: 1rem;">
+        Detection results under varying illumination conditions. Columns represent normal, overexposed, and underexposed scenes; rows correspond to YOLOv8s (RGB), YOLOv8s (event), and M²Former (event), respectively.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End testbed image -->
 
 
 <!-- Video carousel -->
@@ -244,13 +277,13 @@
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>
-        @misc{m2former2025website,
-              author       = {Pan, Ruitao and others},
-              title        = {M²Former Project Page},
-              year         = {2025},
-              howpublished = {\url{https://iamie-vision.github.io/M2Former/}},
-              note         = {Accessed: 2025-07-01}
-            }
+@misc{m2former2025website,
+      author       = {Pan, Ruitao and others},
+      title        = {M²Former Project Page},
+      year         = {2025},
+      howpublished = {\url{https://iamie-vision.github.io/M2Former/}},
+      note         = {Accessed: 2025-07-01}
+    }
       </code></pre>
     </div>
 </section>
