@@ -142,16 +142,20 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            With increasing human space activities, the detection and tracking of resident space objects (RSOs) has become vital for space situational awareness (SSA). Traditional optical sensing modalities face significant challenges due to 
-            extreme illumination conditions, rapid motion, and varying object scales. Event cameras, characterized by asynchronous, sparse event streams, wide dynamic range, and high temporal resolution, present promising alternatives but remain 
-            underexplored for space-based detection tasks. In this paper, we present the first systematic investigation of event-based detectors for spaceborne object detection tasks. To overcome the scarcity of event-based datasets, 
-            we propose a novel synthesis method that generates physically consistent event streams from static images through controlled affine transformations and advanced event simulators, resulting in the publicly available E-SPARK dataset. 
-            Furthermore, we introduce M²Former, a lightweight, multi-scale backbone integrated into the RT-DETR framework, enhancing real-time detection capabilities for sparse event data. To improve the detection accuracy of small RSOs, 
-            we propose an area-aware localization loss (AAL), which adaptively emphasizes localization errors based on object size, and incorporate tailored data augmentation strategies to increase data diversity and supervision density. 
-            Extensive experiments conducted on the synthetic E-SPARK dataset and validated via zero-shot testing on real-world data from a dedicated testbed confirm the method's superior accuracy, efficiency, and robustness. 
-            Our method significantly improves detection accuracy (mAP@50) from 82.6% to 90.3% compared to the RT-DETR-R18 baseline and outperforms state-of-the-art YOLO models. Moreover, it reduces the parameter count and 
-            computational complexity by over 50% relative to RT-DETR-R18, achieving a better trade-off between accuracy and efficiency. These results demonstrate the strong potential of event-based detection methods for 
-            robust and efficient space situational awareness applications.
+            With increasing human space activities, the detection and tracking of resident space objects (RSOs) has become critical for space situational awareness (SSA). 
+            Traditional optical sensors face significant challenges in space environments, such as extreme illumination conditions and motion blur. Event cameras, 
+            with their wide dynamic range and high temporal resolution, offer a promising alternative but remain underexplored for spaceborne detection. 
+            In this paper, we present the first systematic investigation of event-based space object detection. To address the scarcity of event data, 
+            we propose a novel method for generating event streams from static images using controlled affine transformations and advanced event simulators, 
+            resulting in a publicly available dataset called E-SPARK. Furthermore, we propose a lightweight backbone named M²Former for real-time detection, 
+            and introduce an area-aware loss (AAL) for small object detection. These components are integrated into the RT-DETR framework. Additionally, we design 
+            an improved data augmentation strategy to increase data diversity and supervision density for efficient training. The proposed method is trained and 
+            validated on synthetic event data and further evaluated by zero-shot detection on real event data collected from a ground-based testbed. Our method 
+            achieves 0.903 AP@50 on synthetic data, outperforming both the baseline RT-DETR-R18 (0.826 AP@50) and the state-of-the-art YOLO variant (0.873 AP@50). 
+            In zero-shot detection, our method achieves 0.446 AP@50, surpassing event-based YOLOv8s (0.222 AP@50), event-based RT-DETR-R18 (0.344 AP@50), 
+            and image-based YOLOv8s (0.009 AP@50). Moreover, our method reduces the number of parameters and computational complexity by over 50% compared to the baseline, 
+            achieving an optimal trade-off between accuracy and efficiency. Experimental results demonstrate the potential of event cameras for robust spaceborne detection
+            and the superiority of our method in terms of accuracy, efficiency, and generalization.
           </p>
         </div>
       </div>
@@ -171,7 +175,9 @@
       <!-- Text description -->
       <div style="max-width: 960px; margin: 0 auto; line-height: 1.8; font-size: 1rem; text-align: justify;">
       <p>
-        RepViT demonstrates the success of the MetaFormer paradigm within convolutional networks. Inspired by this, we redesign the RT-DETR backbone based on its minimal RT-DETR-R18 configuration into a MetaFormer-style structure that is optimized for spaceborne scenarios with constrained computation and memory. Our M²Former enables efficient convolutional operations and multi-scale feature extraction through the integration of Res2Net, spatial attention, channel attention, and SPD-Conv modules. Detection results on the E-SPARK dataset are shown below.
+        RepViT demonstrates the success of the MetaFormer paradigm within convolutional networks. Inspired by this, we redesign the RT-DETR backbone into a MetaFormer-style structure. 
+        The proposed M²Former enables efficient convolutional and downsampling operations with multi-scale feature extraction capability. It consists of Res2Net, spatial attention, 
+        channel attention, and SPD-Conv modules. Detection results on the proposed E-SPARK dataset are shown below.
       </p>
       </div>
 
