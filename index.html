@@ -57,14 +57,14 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-2 publication-title">M²Former: Enhancing RT-DETR for Robust and Lightweight Event-Based Space Object Detection</h1>
+            <h1 class="title is-2 publication-title">M²Former: Enhancing Event-Based RT-DETR for Robust and Lightweight Space Object Detection</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">Ruitao Pan,</span>
                 <span class="author-block">Chenxi Wang<sup>*</sup>,</span>
                   <span class="author-block">Bin Han,</span>
                   <span class="author-block">Xinyu Zhang,</span>
-                  <span class="author-block">Zhi Zhai,</span>
+                  <span class="author-block">Zhi Zhai,</span></br>
                   <span class="author-block">Jinxin Liu,</span>
                   <span class="author-block">Naijin Liu,</span>
                   <span class="author-block">Xuefeng Chen, <em>Senior Member, IEEE</em></span>
@@ -126,7 +126,8 @@
         <img src="static/images/model_comparison.png" style="width: 95%; height: auto;"/>
       </figure>
       <h2 class="subtitle has-text-centered" style="font-size: 1rem;">
-        Performance comparison of YOLO, RT-DETR, and M²Former on the E-SPARK dataset, where M²Former* denotes the variant achieving the highest mAP@50, trained with area-aware localization loss and data augmentation strategy. <em>The size of each circle indicates the number of model parameters.</em>
+        Performance comparison of YOLO variants, RT-DETR variants, and the proposed M²Former on the E-SPARK dataset, where M²Former* and RT-DETR-R18* denote 
+        the variants trained with the area-aware loss and the improved data augmentation strategy. The size of each circle indicates the number of model parameters.
       </h2>
     </div>
   </div>
@@ -147,7 +148,7 @@
             with their wide dynamic range and high temporal resolution, offer a promising alternative but remain underexplored for spaceborne detection. 
             In this paper, we present the first systematic investigation of event-based space object detection. To address the scarcity of event data, 
             we propose a novel method for generating event streams from static images using controlled affine transformations and advanced event simulators, 
-            resulting in a publicly available dataset called E-SPARK. Furthermore, we propose a lightweight backbone named M²Former for real-time detection, 
+            resulting in a publicly available dataset called <strong>E-SPARK</strong>. Furthermore, we propose a lightweight backbone named <strong>M²Former</strong>for real-time detection, 
             and introduce an area-aware loss (AAL) for small object detection. These components are integrated into the RT-DETR framework. Additionally, we design 
             an improved data augmentation strategy to increase data diversity and supervision density for efficient training. The proposed method is trained and 
             validated on synthetic event data and further evaluated by zero-shot detection on real event data collected from a ground-based testbed. Our method 
