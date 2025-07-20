@@ -180,7 +180,7 @@
           <!-- Your image here -->
           <img src="static/images/model_architecture.png" style="width: 80%; height: auto; display: block; margin: 0 auto;"/>
           <h2 class="subtitle has-text-centered" style="margin-top: 1rem; font-size: 1rem;">
-            Overall architecture of the backbone.
+            Overall architecture of the proposed backbone M²Former.
           </h2>
         </div>
         <div class="item">
@@ -219,17 +219,18 @@
       <h2 class="title is-3 has-text-centered">Quantitative Results</h2>
       <div style="max-width: 960px; margin: 0 auto; line-height: 1.8; font-size: 1rem; text-align: justify; margin-bottom: 2rem;">
       <p>
-        We adopt standard evaluation metrics from object detection benchmarks. <strong>mAP@50</strong> represents mean Average Precision at IoU threshold 0.5, which measures overall detection accuracy. <strong>mAP@50:95</strong> averages AP over multiple IoU thresholds (0.5 to 0.95 with a step of 0.05), offering a more stringent indicator of localization precision. 
-        <strong>mAPs</strong> denotes average precision for small objects, highlighting performance in challenging cases. In the zero-shot generalization evaluation, class labels are not considered, so <strong>AP@50</strong> and <strong>AP@50:95</strong> are computed to reflect category-agnostic detection performance.
+        We adopt standard COCO metrics for object detection benchmarks. <strong>AP@50</strong> represents mean Average Precision at IoU threshold 0.5, which measures overall detection accuracy. <strong>AP@50:95</strong> averages AP over multiple IoU thresholds (0.5 to 0.95 with a step of 0.05), offering a more stringent indicator of localization precision. 
+        <strong>APs</strong> denotes average precision for small objects, highlighting performance in challenging small object detecion. In zero-shot detection, we consider it as a category-agnostic task.
       </p>
       <ul style="list-style-type: disc; padding-left: 1.5rem;">
-      <li><strong>Table I:</strong> We compare different event representations (Histogram, Time Surface, Event Volume) across detection models. Event Histogram is ultimately selected due to its strong detection performance and fastest preprocessing speed, offering a favorable trade-off for large-scale training and deployment.</li>
-      <li><strong>Table II:</strong> Using Event Histogram as a unified input, we evaluate performance across models. M²Former with AAL and data augmentation achieves the best overall and small object accuracy, showing the additive benefit of our proposed modules.</li>
-      <li><strong>Table III:</strong> This table compares model size and GFLOPs. M²Former achieves comparable or better accuracy while reducing computation and parameters by over 50% compared to RT-DETR-R18, enabling efficient deployment.</li>
-      <li><strong>Table IV:</strong> Ablation study shows that Res2Net contributes most to performance, followed by attention modules and SPD-Conv, validating the effectiveness of each design in the M²Former architecture.</li>
-      <li><strong>Table V:</strong> We evaluate detection performance on event histogram inputs rescaled to 346×260 resolution, matching the native resolution of the DAVIS346 camera. Despite the downsampling, M²Former with AAL and data augmentation still achieves the highest mAP@50 (0.903), confirming its robustness to reduced input quality and suitability for resource-constrained deployment.</li>
-      <li><strong>Table VI:</strong> We conduct zero-shot generalization experiments under three illumination settings: normal exposure, overexposure, and underexposure. All models are trained exclusively on synthetic event data. Event-based models significantly outperform the RGB-based YOLOv8s, especially under challenging conditions where RGB performance drops to near-zero. 
-        M²Former consistently achieves the best AP scores across all lighting conditions, with a standout AP50 of 0.781 under underexposure. <strong>These results highlight the strong illumination robustness and generalization capability of event data, and demonstrate M²Former’s suitability for spaceborne detection tasks under extreme visual conditions.</strong></li>
+        <li><strong>Table I</strong> lists the augmentation strategies used during training, including Mosaic, Mixup, translation, scaling, and flipping, which enhance data diversity and generalization.</li>
+        <li><strong>Table II</strong> compares event representations. Although Event Volume yields slightly better accuracy, Event Histogram is selected for its strong performance and faster preprocessing.</li>
+        <li><strong>Table III</strong> shows that M²Former with the AAL and the improved data augmentation strategry achieves the best accuracy, especially for small objects, validating the effectiveness of our design.</li>
+        <li><strong>Table IV</strong> highlights that M²Former reduces parameters and GFLOPs by over 50% compared to RT-DETR-R18 while maintaining superior accuracy.</li>
+        <li><strong>Table V</strong> presents ablation results of the M²Former, showing the impacts of each module.</li>
+        <li><strong>Table VI</strong> confirms that Mosaic and Mixup significantly improve performance, supporting the use of tailored augmentations.</li>
+        <li><strong>Table VII</strong> demonstrates that M²Former remains robust even at low input resolution, achieving the highest performance.</li>
+        <li><strong>Table VIII</strong> shows that M²Former outperforms other models in zero-shot generalization across lighting conditions.</li>
       </ul>
     </div>
       <iframe src="static/pdf/Tables.pdf" width="100%" height="700"></iframe>
