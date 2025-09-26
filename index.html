@@ -129,8 +129,9 @@
         <img src="static/images/model_comparison.jpg" style="width: 95%; height: auto;"/>
       </figure>
       <h2 class="subtitle has-text-centered" style="font-size: 1rem;">
-        Performance comparison of YOLO variants, RT-DETR variants, and the proposed M²Former on the E-SPARK dataset, where M²Former* and RT-DETR-R18* denote 
-        the variants trained with the area-aware loss and the improved data augmentation strategy. The size of each circle indicates the number of model parameters.
+        Performance comparison on the E-SPARK dataset. M²Former* denotes the variant of M²Former trained with the improved data augmentation strategy. 
+        RT-DETR-R18* denotes the variant of RT-DETR-R18 trained with the default data augmentation strategy. 
+        The size of each circle indicates the number of model parameters.
       </h2>
     </div>
   </div>
@@ -146,20 +147,17 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            With increasing human space activities, the detection and tracking of resident space objects (RSOs) has become critical for space situational awareness (SSA). 
-            Traditional optical sensors face significant challenges in space environments, such as extreme illumination conditions and motion blur. Event cameras, 
-            with their wide dynamic range and high temporal resolution, offer a promising alternative but remain underexplored for spaceborne detection. 
-            In this paper, we present the first systematic investigation of event-based space object detection. To address the scarcity of event data, 
-            we propose a novel method for generating event streams from static images using controlled affine transformations and advanced event simulators, 
-            resulting in a publicly available dataset called <strong>E-SPARK</strong>. Furthermore, we propose a lightweight backbone named <strong>M²Former</strong>for real-time detection, 
-            and introduce an area-aware loss (AAL) for small object detection. These components are integrated into the RT-DETR framework. Additionally, we design 
-            an improved data augmentation strategy to increase data diversity and supervision density for efficient training. The proposed method is trained and 
-            validated on synthetic event data and further evaluated by zero-shot detection on real event data collected from a ground-based testbed. Our method 
-            achieves 0.903 AP@50 on synthetic data, outperforming both the baseline RT-DETR-R18 (0.826 AP@50) and the state-of-the-art YOLO variant (0.873 AP@50). 
-            In zero-shot detection, our method achieves 0.446 AP@50, surpassing event-based YOLOv8s (0.222 AP@50), event-based RT-DETR-R18 (0.344 AP@50), 
-            and image-based YOLOv8s (0.009 AP@50). Moreover, our method reduces the number of parameters and computational complexity by over 50% compared to the baseline, 
-            achieving an optimal trade-off between accuracy and efficiency. Experimental results demonstrate the potential of event cameras for robust spaceborne detection
-            and the superiority of our method in terms of accuracy, efficiency, and generalization.
+            With increasing human space activities, detecting resident space objects (RSOs) has become critical for space monitoring and on-obrit missions. 
+            Traditional optical sensors struggle in space environments due to extreme illumination variations and motion blur. 
+            Event cameras, bio-inspired sensors that asynchronously record per-pixel brightness changes, offer high temporal resolution, wide dynamic range, and low power consumption, 
+            making them promising for orbital sensing yet underexplored in this context. In this work, we present the first systematic study of event-based space object detection. 
+            To address the scarcity of event data, we construct <strong>E-SPARK</strong>, a large-scale dataset generated with affine transformations and advanced simulators. 
+            Building upon this dataset, we propose <strong>M²Former</strong>, a lightweight multi-scale MetaFormer backbone, together with <strong>an area-aware loss (AAL)</strong> tailored for small object detection. 
+            These are integrated into the RT-DETR framework, a Transformer-based detector known for its robustness but higher computational cost compared to YOLO models. 
+            Our design reduces parameters and complexity by over <strong>50%</strong> while maintaining comparable detection accuracy. 
+            In addition, we design <strong>an improved data augmentation strategy</strong> that enriches supervision density and data diversity, further boosting detection performance. 
+            Experiments on both synthetic and real event data demonstrate that our method achieves state-of-the-art performance and strong generalization. 
+            These results highlight the potential of event cameras as a reliable sensing modality for spaceborne detection.
           </p>
         </div>
       </div>
@@ -236,7 +234,7 @@
         <li><strong>Table I</strong> lists the augmentation strategies used during training, including Mosaic, Mixup, translation, scaling, and flipping, which enhance data diversity and generalization.</li>
         <li><strong>Table II</strong> compares event representations. Although Event Volume yields slightly better accuracy, Event Histogram is selected for its strong performance and faster preprocessing.</li>
         <li><strong>Table III</strong> shows that M²Former with the AAL and the improved data augmentation strategry achieves the best accuracy, especially for small objects, validating the effectiveness of our design.</li>
-        <li><strong>Table IV</strong> highlights that M²Former reduces parameters and GFLOPs by over 50% compared to RT-DETR-R18 while maintaining superior accuracy.</li>
+        <li><strong>Table IV</strong> highlights that M²Former reduces parameters and GFLOPs by over 50% compared to RT-DETR-R18 while maintaining real-time performance.</li>
         <li><strong>Table V</strong> presents ablation results of the M²Former, showing the impacts of each module.</li>
         <li><strong>Table VI</strong> confirms that Mosaic and Mixup significantly improve performance, supporting the use of tailored augmentations.</li>
         <li><strong>Table VII</strong> demonstrates that M²Former remains robust even at low input resolution, achieving the highest performance.</li>
@@ -261,15 +259,17 @@
       <p>
         Zero-shot validation is conducted on real-world data captured from a ground-based testbed, using models trained exclusively on synthetic data without any fine-tuning. We collecte a total of 300 samples using the testbed, covering three illumination conditions: 
         normal exposure, overexposure, and underexposure, with 100 samples per condition. For each sample, RGB images and event data are synchronously recorded by the DAVIS346 camera at the resolution of 346×260. We adopt YOLOv8s as the representative RGB-based detector 
-        due to its high detection accuracy and moderate model complexity. 
+        due to its high detection accuracy and moderate model complexity.
       </p>
+      
       <p>
         Due to motion blur, color degradation, and texture loss, RGB-based detectors struggle to localize targets under extreme illumination, especially failing completely under underexposure. In contrast, both YOLOv8s and M²Former exhibit stronger robustness when using event data, 
         which is less affected by illumination artifacts. Notably, although M²Former generates more detection boxes than YOLOv8s, these boxes remain consistently close to the target, indicating higher recall and better localization. This highlights a key trade-off: M²Former maintains 
         superior robustness and recall under challenging conditions, whereas YOLOv8s sacrifices recall to preserve precision—often leading to missed detections.
       </p>
-      </p>
-        In summry, these results underscore the robustness of event data under extreme lighting conditions and demenstrate the strong sim-to-real generalization capability of the M²Former model, making it reliable object detection in real-world space scenarios.
+      
+      <p>
+        In summary, these results underscore the robustness of event data under extreme lighting conditions and demonstrate the strong sim-to-real generalization capability of the M²Former model, making it reliable for object detection in real-world space scenarios.
       </p>
       </div>
       
