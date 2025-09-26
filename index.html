@@ -259,16 +259,12 @@
       <p>
         Zero-shot validation is conducted on real-world data captured from a ground-based testbed, using models trained exclusively on synthetic data without any fine-tuning. We collecte a total of 300 samples using the testbed, covering three illumination conditions: 
         normal exposure, overexposure, and underexposure, with 100 samples per condition. For each sample, RGB images and event data are synchronously recorded by the DAVIS346 camera at the resolution of 346×260. We adopt YOLOv8s as the representative RGB-based detector 
-        due to its high detection accuracy and moderate model complexity.
-      </p>
-      
-      <p>
+        due to its high detection accuracy and moderate model complexity.<br>
+
         Due to motion blur, color degradation, and texture loss, RGB-based detectors struggle to localize targets under extreme illumination, especially failing completely under underexposure. In contrast, both YOLOv8s and M²Former exhibit stronger robustness when using event data, 
         which is less affected by illumination artifacts. Notably, although M²Former generates more detection boxes than YOLOv8s, these boxes remain consistently close to the target, indicating higher recall and better localization. This highlights a key trade-off: M²Former maintains 
-        superior robustness and recall under challenging conditions, whereas YOLOv8s sacrifices recall to preserve precision—often leading to missed detections.
-      </p>
-      
-      <p>
+        superior robustness and recall under challenging conditions, whereas YOLOv8s sacrifices recall to preserve precision—often leading to missed detections.<br>
+
         In summary, these results underscore the robustness of event data under extreme lighting conditions and demonstrate the strong sim-to-real generalization capability of the M²Former model, making it reliable for object detection in real-world space scenarios.
       </p>
       </div>
